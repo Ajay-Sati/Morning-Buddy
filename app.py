@@ -135,15 +135,19 @@ def schedule_page():
     """Displays the page for viewing the day's schedule."""
     st.header("Your Smart Planner Day")
     city = st.text_input("Enter your city name:")
-    smart_plan= smart_planner(city)
-    st.subheader(smart_plan)
-    st.success("Have a Happy day.")
+    if st.button("Let's Plan"):
+        if city:
+            smart_plan = smart_planner(city)
+            st.subheader(smart_plan)
+            st.success("Have a Happy day.")
+        else:
+            st.error("Please enter a city name.")
 
 
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
 st.sidebar.markdown("---")
-page_option = st.sidebar.radio("Choose a page:", ("Home", "Get Weather of your City", "News by Interest", "Your Day's Schedule"))
+page_option = st.sidebar.radio("Choose a page:", ("Home", "Get Weather of your City", "News by Interest","Smart Planner"))
 st.sidebar.markdown("---")
 
 
@@ -154,8 +158,9 @@ elif page_option == "Get Weather of your City":
     weather_news_page()
 elif page_option == "News by Interest":
     interest_news_page()
-elif page_option == "Your Day's Schedule":
+elif page_option =="Smart Planner":
     schedule_page()
+
 
 
 
