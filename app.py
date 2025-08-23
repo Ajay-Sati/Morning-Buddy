@@ -143,17 +143,18 @@ def schedule_page():
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
 st.sidebar.markdown("---")
-page_option = st.sidebar.radio("Choose a page:", ("Home", "Weather of the City", "News by Interest", "Your Day's Schedule"))
+page_option = st.sidebar.radio("Choose a page:", ("Home", "Weather of Your City", "News by Interest", "Your Day's Schedule"))
 st.sidebar.markdown("---")
 
 
 # --- Page Routing ---
 if page_option == "Home":
     home_page()
-elif page_option == "Get Weather of your City":
+elif page_option == "Weather of Your City":
     weather_news_page()
 elif page_option == "News by Interest":
     interest_news_page()
 elif page_option == "Your Day's Schedule":
     schedule_page()
+
 
