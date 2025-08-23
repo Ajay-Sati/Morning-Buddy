@@ -143,7 +143,7 @@ def schedule_page():
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
 st.sidebar.markdown("---")
-page_option = st.sidebar.radio("Choose a page:", ("Home", "Weather & News by City", "News by Interest", "Your Day's Schedule"))
+page_option = st.sidebar.radio("Choose a page:", ("Home", "Weather of the City", "News by Interest", "Your Day's Schedule"))
 st.sidebar.markdown("---")
 
 
@@ -156,3 +156,4 @@ elif page_option == "News by Interest":
     interest_news_page()
 elif page_option == "Your Day's Schedule":
     schedule_page()
+
