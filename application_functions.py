@@ -96,7 +96,7 @@ def get_news(topic: str):
 def news_summarizer(url):
         response = client.models.generate_content(
                             model="gemini-2.5-flash",
-                            contents=f"summarize news from the url:- {url}",
+                            contents=f"summarize news from the url:- {url}, dont add sentences like from where the articles is ,in this article etc. Just give clear and crisp summary.",
                         )
         return response.text
 
@@ -285,5 +285,6 @@ def smart_planner (city):
     )
 
     return response.candidates[0].content.parts[0].text
+
 
 
